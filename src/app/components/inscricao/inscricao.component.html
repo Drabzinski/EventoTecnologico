@@ -1,0 +1,69 @@
+<div id="inscricao" class="form-container">
+    <form (ngSubmit)="onSubmit()" #inscricaoForm="ngForm">
+      <h2>Formulário de Inscrição</h2>
+  
+      <div class="form-group">
+        <label for="nome">Nome Completo:</label>
+        <input
+          id="nome"
+          name="nome"
+          type="text"
+          ngModel
+          required
+          #nome="ngModel"
+          class="form-control"
+        />
+        <div *ngIf="nome.invalid && (nome.dirty || nome.touched)" class="error">
+          <div *ngIf="nome.errors?.required">Nome é obrigatório.</div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          ngModel
+          required
+          #email="ngModel"
+          class="form-control"
+        />
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error">
+          <div *ngIf="email.errors?.required">Email é obrigatório.</div>
+          <div *ngIf="email.errors?.email">Email inválido.</div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="telefone">Telefone:</label>
+        <input
+          id="telefone"
+          name="telefone"
+          type="tel"
+          ngModel
+          required
+          #telefone="ngModel"
+          class="form-control"
+        />
+        <div *ngIf="telefone.invalid && (telefone.dirty || telefone.touched)" class="error">
+          <div *ngIf="telefone.errors?.required">Telefone é obrigatório.</div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="observacoes">Observações:</label>
+        <textarea
+          id="observacoes"
+          name="observacoes"
+          ngModel
+          class="form-control"
+        ></textarea>
+      </div>
+  
+      <button type="submit" [disabled]="inscricaoForm.invalid" class="submit-button">
+        Enviar
+      </button>
+    </form>
+  </div>
+  

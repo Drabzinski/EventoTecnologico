@@ -1,0 +1,11 @@
+<div id= "palestrantes" class="title-palestrantes">
+    <h2>Palestrantes do Techinvest</h2>
+  </div>
+  <div class="palestrantes-container">
+    <div *ngFor="let palestrante of palestrantes" class="palestrante">
+      <img [src]="palestrante.foto" [alt]="palestrante.nome">
+      <h3>{{ palestrante.nome }}</h3>
+      <p><strong>Tema:</strong> {{ palestrante.tema }}</p>
+    </div>
+  </div>
+  

@@ -1,0 +1,10 @@
+<div id="patrocinadores" class="patrocinadores-section">
+  <h2>Patrocinadores</h2>
+  <div class="patrocinadores-container">
+    <div *ngFor="let patrocinador of patrocinadores" class="patrocinador">
+      <img [src]="patrocinador.logo" [alt]="patrocinador.nome">
+      <p><strong>{{ patrocinador.nome }}</strong></p>
+      <p>{{ patrocinador.descricao }}</p>
+    </div>
+  </div>
+</div>
